@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pageloadtime" basedir="." default="main">
+
+	<target name="clean">
+		<delete file="pageloadtime.zip" />
+	</target>
+
+	<target name="zip">
+		<zip basedir="./src" destfile="pageloadtime.zip" />
+	</target>
+
+	<target name="main" depends="clean,zip"/>
+	
+</project>

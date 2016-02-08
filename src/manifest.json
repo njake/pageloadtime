@@ -1,0 +1,47 @@
+{
+    "manifest_version":2,
+    "name":"Page Load Time",
+    "version":"0.1.3",
+    "applications":{
+        "gecko":{
+            "id":"pageloadtime-extension@mka.fi"
+        }
+    },
+    "icons":{
+        "16":"img/stopwatch16.png",
+        "48":"img/stopwatch48.png",
+        "128":"img/stopwatch128.png"
+    },
+    "permissions":[
+        "*://*/*",
+        "tabs",
+        "storage",
+        "webNavigation"
+    ],
+    "browser_action":{
+        "default_icon":"img/stopwatch22.png",
+        "default_popup":"html/popup.html"
+    },
+    "background":{
+        "scripts":[
+            "js/background.js"
+        ]
+    },
+    "content_scripts":[
+        {
+            "matches":[
+                "*://*/*"
+            ],
+            "all_frames":true,
+            "css":[
+                "css/content.css"
+            ],
+            "js":[
+                "js/content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources":[
+        "html/popup.html"
+    ]
+}
