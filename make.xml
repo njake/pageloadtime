@@ -3,10 +3,12 @@
 
 	<target name="clean">
 		<delete file="pageloadtime.zip" />
+		<delete file="pageloadtime.xpi" />
 	</target>
 
 	<target name="zip">
 		<zip basedir="./src" destfile="pageloadtime.zip" />
+		<copy file="pageloadtime.zip" tofile="pageloadtime.xpi"/>
 	</target>
 
 	<target name="main" depends="clean,zip"/>

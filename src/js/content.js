@@ -1,4 +1,3 @@
-// content.js
 (function() {
 	if (document.readyState == 'complete') {
 		measure();

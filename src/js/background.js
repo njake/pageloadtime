@@ -1,26 +1,25 @@
-// background.js
-//console.log('background.js');
-var frameCount = 0;
+var page_load_time_frame_count = 0;
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-
-	// console.log('background.js ' + request);
+	if ( !sender.tab) {
+		return;
+	}
 
 	switch (request.action) {
 
 		case 'save':
 			chrome.storage.local.get('cache', function(data) {
-				frameCount++;
+				page_load_time_frame_count++;
 				if ( !data.cache) {
 					data.cache = {};
 				}
 				if ( !data.cache['tab' + sender.tab.id]) {
 					data.cache['tab' + sender.tab.id] = {};
 				}
-				data.cache['tab' + sender.tab.id]['frame' + frameCount] = request.timing;
+				data.cache['tab' + sender.tab.id]['frame' + page_load_time_frame_count] = request.timing;
 				chrome.storage.local.set(data);
 				sendResponse({
-					id : frameCount
+					id : page_load_time_frame_count
 				});
 			});
 		break;

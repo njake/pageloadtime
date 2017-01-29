@@ -2,7 +2,7 @@
 	position:fixed;
 	top:0;
 	right:0;
-	z-index:49999;
+	z-index:2000000000;
 	color:#FFF;
     font-family: Tahoma, sans-serif;
 	padding:1px;
@@ -42,7 +42,7 @@
   position: fixed;
   top: 17px;
   right: 0;
-  z-index:50000;
+  z-index:2000000001;
   width: 317px;
   height: 235px;
   border: 1px solid #999;
