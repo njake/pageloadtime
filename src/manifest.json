@@ -1,47 +1,51 @@
 {
-    "manifest_version":2,
-    "name":"Page Load Time",
-    "version":"0.1.4",
-    "applications":{
-        "gecko":{
-            "id":"pageloadtime-extension@mka.fi"
+    "manifest_version": 2,
+    "name": "Page Load Time",
+    "description": "Show page load times on every frame",
+    "version": "0.1.5",
+    "applications": {
+        "gecko": {
+            "id": "pageloadtime-extension@mka.fi"
         }
     },
-    "icons":{
-        "16":"img/stopwatch16.png",
-        "48":"img/stopwatch48.png",
-        "128":"img/stopwatch128.png"
+    "icons": {
+		"16": "img/chronometer-16.png",
+		"48": "img/chronometer-48.png",
+		"128": "img/chronometer-128.png"
     },
-    "permissions":[
+    "permissions": [
         "*://*/*",
         "tabs",
         "storage",
         "webNavigation"
     ],
-    "browser_action":{
-        "default_icon":"img/stopwatch22.png",
-        "default_popup":"html/popup.html"
+    "browser_action": {
+		"default_icon": {
+			"19": "img/chronometer-19.png",
+			"38": "img/chronometer-38.png"
+		},
+        "default_popup": "html/popup.html"
     },
-    "background":{
-        "scripts":[
+    "background": {
+        "scripts": [
             "js/background.js"
         ]
     },
-    "content_scripts":[
+    "content_scripts": [
         {
-            "matches":[
+            "matches": [
                 "*://*/*"
             ],
-            "all_frames":true,
-            "css":[
+            "css": [
                 "css/content.css"
             ],
-            "js":[
+            "js": [
                 "js/content.js"
-            ]
+            ],
+			"all_frames": true
         }
     ],
-    "web_accessible_resources":[
+    "web_accessible_resources": [
         "html/popup.html"
     ]
 }
