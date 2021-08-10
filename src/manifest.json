@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Page Load Time",
-    "description": "Show page load times on every frame",
-    "version": "0.1.5",
+    "description": "Page load times from all frames, insert top-right indicator to every page. Change colors when takes too much time to load page.",
+    "version": "0.1.6",
     "applications": {
         "gecko": {
             "id": "pageloadtime-extension@mka.fi"
@@ -14,10 +14,8 @@
 		"128": "img/chronometer-128.png"
     },
     "permissions": [
-        "*://*/*",
-        "tabs",
-        "storage",
-        "webNavigation"
+        "activeTab",
+        "storage"
     ],
     "browser_action": {
 		"default_icon": {
